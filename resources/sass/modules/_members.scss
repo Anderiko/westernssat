@@ -1,0 +1,108 @@
+.parallax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+
+    &:first-child {
+        min-height: 50vh;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+}
+
+.members {
+    > h3 {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+}
+
+.parallax-content {
+    background-color: white;
+    text-align: justify;
+    box-shadow: 0 0 5px 3px rgba(100, 100, 100, .5);
+
+    .photo-cropper {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 5px 3px rgba(100, 100, 100, .5);
+    }
+
+    .photo {
+        display: inline;
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .parallax-content {
+
+        &.alternate .cust-wrapper {
+            justify-content: flex-end;
+
+            .member-presentation {
+                order: 0;
+                text-align: right;
+            }
+
+            .photo-cropper {
+                order: 1;
+            }
+        }
+
+        .cust-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .photo-cropper {
+                margin: 0 2em;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .parallax {
+        min-height: 200px;
+        background-attachment: scroll;
+    }
+
+    .parallax-content .cust-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .photo-cropper {
+            width: 150px;
+            height: 150px;
+        }
+
+        .member-presentation {
+            text-align: center;
+            margin-top: 1em;
+        }
+    }
+}

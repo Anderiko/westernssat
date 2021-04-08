@@ -1,0 +1,96 @@
+.event-list {
+    .event {
+        .card {
+            border: none;
+            border-radius: 0;
+            height: 100%;
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .actions {
+                    margin-top: 1em;
+                }
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                color: #fff;
+                border-radius: 0;
+
+                &:not(:last-child) {
+                    margin-right: .5em;
+                }
+            }
+        }
+
+        .card-img-top {
+            border-radius: 0;
+            background-position: center;
+            background-size: cover;
+            min-height: 300px;
+        }
+    }
+}
+
+.show-event {
+    .event {
+        .card {
+            @media (min-width: 992px) {
+                flex-direction: row;
+
+                .card-img-top {
+                    width: 50%;
+                }
+            }
+
+            box-shadow: 0 0 5px 0 rgba(100, 100, 100, .5);
+
+            .card-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+                    color: $orange;
+                    display: block;
+                    padding: .5em 1em;
+                }
+            }
+
+            .card-text {
+                i {
+                    width: 20px;
+                    text-align: center;
+                    margin-right: 1em;
+                }
+            }
+
+            .card-img-top {
+                border-radius: 0;
+                background-position: center;
+                background-size: cover;
+                min-height: 300px;
+            }
+        }
+    }
+}
+
+.event-list:not(.show-event) {
+    .event {
+        .card {
+
+            .card-body {
+                background-color: $body-bg;
+            }
+        }
+    }
+}

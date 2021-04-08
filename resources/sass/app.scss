@@ -1,0 +1,37 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+@font-face {
+    font-family: 'Western';
+    src: url('../fonts/western.woff2') format('woff2'),
+    url('../fonts/western.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Variables
+@import 'base/variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import 'layouts/header';
+
+@import 'modules/background';
+@import 'modules/sections';
+@import 'modules/login';
+@import 'modules/profile';
+@import 'modules/members';
+@import 'modules/welcome';
+@import 'modules/errors';
+@import 'modules/events';
+@import 'modules/game';
+
+
+.western {
+    font-family: 'Western', 'Nunito', sans-serif;
+}
+
+.text-orange {
+    color: $orange;
+}
